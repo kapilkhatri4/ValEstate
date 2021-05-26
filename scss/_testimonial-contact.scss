@@ -1,0 +1,164 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+
+.review {
+  padding-bottom: 12rem;
+  .slider {
+    display: flex !important;
+    .re-text {
+      width: 50%;
+      padding: 1rem;
+      h3 {
+        color: $primary-dark;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        color: $primary-light;
+        margin-bottom: 1rem;
+        i {
+          color: rgb(255, 213, 24);
+        }
+      }
+    }
+    .re-img {
+      width: 50%;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+      img {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        object-fit: cover;
+        border-radius: 100%;
+        z-index: 20;
+        border: 1px solid $primary-dark;
+      }
+      &::before {
+        content: '';
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        top: 0px;
+        left: 20%;
+        background: rgba($primary-light, 0.2);
+        position: absolute;
+        z-index: -1;
+      }
+    }
+  }
+  @include mq(medium) {
+    .slider {
+      flex-direction: column;
+      .re-text,
+      .re-img {
+        width: 100%;
+      }
+    }
+  }
+}
+footer {
+  background: $primary-medium;
+  padding-bottom: 12rem;
+  main {
+    display: grid;
+    grid-template-columns: 2fr, 1fr, 1fr;
+    grid-template-areas: 'footer-item link contact-more';
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+  .footer-item {
+    grid-area: footer-item;
+    align-self: center;
+    p {
+      font-size: 1.4rem;
+      color: $secondary-light;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: $secondary-light;
+      font-size: 1.2rem;
+      text-decoration: underline !important;
+    }
+    form {
+      margin-top: 2rem;
+      .form-item {
+        margin-bottom: 1rem;
+        input,
+        textarea {
+          background: rgba($primary-light, 0.2);
+          width: 70%;
+        }
+      }
+    }
+  }
+  .important-link {
+    grid-area: link;
+    p {
+      font-size: 1.4rem;
+      color: $secondary-light;
+      margin-bottom: 1rem;
+    }
+    li {
+      list-style: none;
+      padding: 0.5rem;
+      .footer-lik {
+        color: $secondary-light;
+        text-decoration: none;
+      }
+      &:hover {
+        .footer-lik {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .contact-more {
+    grid-area: contact-more;
+    p {
+      font-size: 1.4rem;
+      color: $secondary-light;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: none;
+
+      i {
+        color: $secondary-light;
+        font-size: 2rem;
+        padding: 0.5rem;
+        @include transition;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+  .copyrigt {
+    p {
+      color: $primary-light;
+    }
+  }
+  @include mq(medium) {
+    main {
+      .footer-item {
+        grid-column: 1/5;
+        form {
+          input,
+          textarea {
+            width: 100% !important;
+          }
+        }
+      }
+      .important-link {
+        grid-column: 1/3;
+        grid-row: 2/2;
+      }
+      .contact-more {
+        grid-column: 3/5;
+        grid-row: 2/2;
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+@use 'abstracts' as *;
+@use 'base' as *;
+
+.about-us {
+  background: rgba($primary-light, 0.2);
+  .all-about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    .about-video {
+      width: 100%;
+      video {
+        width: 100%;
+      }
+    }
+    .about-info {
+      padding: 1rem 3rem;
+      h3 {
+        font-size: 2rem;
+        color: $primary-dark;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1rem;
+        color: $primary-light;
+      }
+      .read-more {
+        margin-top: 1rem;
+      }
+    }
+  }
+  @include mq(medium) {
+    .all-about {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2;
+      h3 {
+        font-size: 1.5rem;
+      }
+      .about-info {
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}
+
+.our-team {
+  padding-bottom: 12rem;
+  .profile {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    @include transition;
+    .profile-img {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // border: 1px solid black;
+      width: 100%;
+      padding: 1rem;
+      position: relative;
+      margin: 0;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        border-right: 1px solid $primary-light;
+      }
+      img {
+        width: 180px;
+        height: 180px;
+        border-radius: 100%;
+        object-fit: cover;
+        position: relative !important;
+        padding: 1rem;
+        border: 1px solid $primary-light;
+        transition: all 0.2s ease;
+      }
+      .social-icons {
+        position: absolute;
+        top: 0;
+        right: -2rem;
+        font-size: 2rem;
+        color: $primary-light;
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+        &:nth-child(1) {
+          top: 7%;
+        }
+        &:nth-child(2) {
+          top: 21%;
+        }
+        &:nth-child(3) {
+          top: 35%;
+        }
+        &:nth-child(4) {
+          top: 49%;
+        }
+      }
+      .profile-info {
+        margin-top: 1rem;
+        h3 {
+          color: $primary-dark;
+        }
+      }
+      &:hover {
+        .social-icons {
+          right: 0.5rem;
+          opacity: 1;
+          visibility: visible;
+        }
+        img {
+          padding: 0;
+        }
+      }
+    }
+  }
+  @include mq(large) {
+    .profile {
+      grid-template-columns: repeat(2, 1fr);
+      .profile-img {
+        &:nth-child(2) {
+          border: none !important;
+        }
+      }
+    }
+  }
+  @include mq(small) {
+    .profile {
+      grid-template-columns: repeat(1, 1fr);
+      .profile-img {
+        &:nth-child(3),
+        &:nth-child(2),
+        &:nth-child(1) {
+          border: none;
+        }
+      }
+    }
+  }
+}

@@ -332,6 +332,7 @@ header .menu-active {
     display: flex;
     height: fit-content;
     justify-content: center;
+    max-width: 100%;
   }
   .home .select-opt {
     grid-column: 3/6;

@@ -146,6 +146,7 @@ header {
 header .menu-btn {
   display: none;
   cursor: pointer;
+  font-size: 1.2rem;
 }
 header .logo {
   grid-area: logo;

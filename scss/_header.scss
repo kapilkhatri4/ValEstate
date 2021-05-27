@@ -143,11 +143,12 @@ header {
     .home-prop {
       position: absolute;
       top: 0;
+      max-width: 100%;
       .area-sq {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2rem;
+        padding: 2rem 1rem;
         background-color: $primary-light;
         color: $secondary-light;
         text-align: center;

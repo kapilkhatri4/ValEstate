@@ -136,6 +136,7 @@ footer {
     }
   }
   .copyrigt {
+    grid-column: 1/5;
     p {
       color: $primary-light;
     }

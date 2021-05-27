@@ -144,6 +144,11 @@ header {
   padding: 1rem;
 }
 header .menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   display: none;
   cursor: pointer;
   font-size: 1.2rem;
@@ -192,7 +197,7 @@ header .menu-active {
 }
 @media only screen and (max-width: 768px) {
   header .menu-btn {
-    display: block;
+    display: inline-flex;
     grid-column: 4/5;
     align-self: center;
   }
@@ -818,6 +823,9 @@ footer .contact-more a i {
 }
 footer .contact-more a i:hover {
   transform: scale(1.05);
+}
+footer .copyrigt {
+  grid-column: 1/5;
 }
 footer .copyrigt p {
   color: #816b4d;

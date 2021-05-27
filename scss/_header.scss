@@ -14,6 +14,11 @@ header {
   z-index: 100;
   padding: 1rem;
   .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height: 30px;
     display: none;
     cursor: pointer;
     font-size: 1.2rem;
@@ -62,7 +67,7 @@ header {
   }
   @include mq(medium) {
     .menu-btn {
-      display: block;
+      display: inline-flex;
       grid-column: 4/5;
       align-self: center;
     }
